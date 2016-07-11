@@ -90,15 +90,77 @@
         <section>
 
           <section>
-            <h2>Node.js TDD Frameworks</h2>
+            <h1>Node.js TDD Frameworks</h1>
+            <p>Frameworks for Node.js</p>
           </section>
 
           <section>
             <h2>Mocha.js</h2>
+            <blockquote>
+              <p>Mocha is a feature-rich JavaScript test framework running on Node.js and in the browser, making asynchronous testing simple and fun.</p>
+              <footer>– Mochajs.org</footer>
+            </blockquote>
+          </section>
+
+          <section>
+            <h2>Mocha.js</h2>
+            <p></p>
+          </section>
+
+          <section>
+            <h2>Mocha.js Syntax</h2>
+            <pre><code>describe('database tests', function() {
+  describe('users table tests', function () {
+    it('returns an array', function(){
+      // test functions
+    });
+  }
+}</code></pre>
           </section>
 
           <section>
             <h2>Chai.js</h2>
+            <blockquote>
+              <p>Chai is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework.</p>
+              <footer>– Chaijs.org</footer>
+            </blockquote>
+          </section>
+
+          <section>
+            <h2>Chai.js</h2>
+            <p>3 different assertion styles:</p>
+            <ul>
+              <li>
+              <p>should</p>
+              <pre><code>variable.shoud.be.a('string')</code></pre></li>
+              <li>
+              <p>expect</p>
+              <pre><code>expect(variable).to.be.a('string')</code></pre></li>
+              <li>
+              <p>assert</p>
+              <pre><code>assert.typeOf(variable, 'string')</code></pre></li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Chai.js expect syntax</h2>
+            <pre><code>expect(variable)
+      .to.be.a('string')
+      .and.to.be.equal('Hello World');</code></pre>
+          </section>
+
+          <section>
+            <h2>Mocha.js and Chai.js</h2>
+            <pre><code>describe('a testsuite', function() {
+
+  it('returns the string "Hello World"', function() {
+
+    expect(variable)
+      .to.be.a('string')
+      .and.to.be.equal('Hello World');
+
+  });
+});</code></pre>
           </section>
 
         </section>
