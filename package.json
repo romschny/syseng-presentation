@@ -19,8 +19,5 @@
   "bugs": {
     "url": "https://github.com/RomanKol/syseng-presentation/issues"
   },
-  "homepage": "https://github.com/RomanKol/syseng-presentation#readme",
-  "dependencies": {
-    "express": "^4.13.4"
-  }
+  "homepage": "https://github.com/RomanKol/syseng-presentation#readme"
 }
