@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>syseng Presentation</title>
+    <title>System Engineering - Presentation</title>
 
     <link rel="stylesheet" href="css/reveal.css">
     <!-- Theme -->
@@ -23,7 +23,39 @@
     </script>
 
     <!-- Own styles -->
-    <style></style>
+    <style>
+      ul.list-unstyled {
+        list-style: none;
+      }
+      pre {
+        min-width: 640px;
+        max-width: 960px;
+      }
+      iframe {
+        width: 1080px;
+        height: 800px;
+        background-color: white;
+      }
+      .orange {
+        color: #ed7d31 !important;
+      }
+      .red {
+        color: #ff0000 !important;
+      }
+      .yellow {
+        color: #ffc000 !important;
+      }
+      .blue {
+        color: #4472c4 !important;
+      }
+      .green {
+        color: #70ad47 !important;
+      }
+      img.img-unstyled {
+        background: transparent !important;
+        border: none !important;
+      }
+    </style>
 
   </head>
   <body>
@@ -40,48 +72,90 @@
         <!-- Topics -->
         <section>
           <h2>Topics</h2>
-          <ul>
-            <li>TDD with Node.js</li>
-            <li>Code Style and Quality with Node.js</li>
+          <ul class="list-unstyled">
+            <li>
+              <br>
+              <h3>TDD with Node.js</h3>
+              <ul>
+                <li>What is TDD?</li>
+                <li>TDD Cycle</li>
+                <li>Frameworks</li>
+                <li>Examples</li>
+              </ul>
+            </li>
+            <li>
+              <br>
+              <h3>Code Style and Quality with Node.js</h3>
+              <ul>
+                <li>Why?</li>
+                <li>Frameworks</li>
+                <li>Demo</li>
+              </ul>
+            </li>
           </ul>
+        </section>
+
+        <!-- TDD in general -->
+        <section>
+          <section>
+            <h2>What is TDD?</h2>
+            <ul class="list-unstyled">
+              <li>
+                <p>Abbrevation of <strong>Test Driven Development</strong></p>
+              </li>
+              <li>
+                <p>TDD is a software development process that heavily involves unit tests</p>
+              </li>
+              <li>
+                <p>The approach:</p>
+                <ul>
+                  <li>1. Write the test</li>
+                  <li>2. Implement the functionality</li>
+                </ul>
+              </li>
+            </ul>
+            <p></p>
+            <p></p>
+            <aside class="notes"></aside>
+          </section>
         </section>
 
         <!-- TDD Cycle -->
         <section>
 
-          <section>
+          <section data-background-image="./img/tdd-cycle.png" data-background-size="contain">
             <h1>TDD Cycle</h1>
             <p>The TDD Cycle in 5 steps</p>
           </section>
 
           <section>
-            <h2>1. Add a test</h2>
+            <h2 class="orange">1. Add a test</h2>
             <p><strong>Write a test case</strong> to cover the requirements of our application. For the first iteration your test should be <strong>as small as possible</strong>.</p>
           </section>
 
           <section>
-            <h2>2. Run the test</h2>
+            <h2 class="red">2. Run the test</h2>
             <p>After defining our test we’re going to <strong>execute the test</strong> against the application. <strong>The test fails</strong> because the requirement isn’t implemented yet.</p>
           </section>
 
           <section>
-            <h2>3. Write the code</h2>
+            <h2 class="yellow">3. Write the code</h2>
             <p>To fix this it’s time to <strong>implement the least necessary code</strong> in our application. Don’t do too much! Only the really necessary parts should be implemented.</p>
           </section>
 
           <section>
-            <h2>4. Run the test again</h2>
+            <h2 class="blue">4. Run the test again</h2>
             <p>If we run the previous defined test again <strong>the test should pass</strong>. Otherwise we have to go over the code again until it passes.</p>
           </section>
 
           <section>
-            <h2>5. Refactor the code</h2>
+            <h2 class="green">5. Refactor the code</h2>
             <p>When the test passes we should <strong>do some code refactoring</strong> to keep our code clean and slim.</p>
           </section>
 
           <section>
-            <h2>6. Repeat</h2>
-            <p><strong>Repeat Step 1 to 5</strong> until all requirements are met.</p>
+            <h2>Repeat</h2>
+            <p><strong>Repeat step 1 to 5</strong> until all requirements are met.</p>
           </section>
 
         </section>
@@ -100,22 +174,36 @@
               <p>Mocha is a feature-rich JavaScript test framework running on Node.js and in the browser, making asynchronous testing simple and fun.</p>
               <footer>– Mochajs.org</footer>
             </blockquote>
+            <img src="./img/mocha.png" alt="" class="img-unstyled">
           </section>
 
           <section>
             <h2>Mocha.js</h2>
-            <p></p>
+            <ul class="list-unstyled">
+              <li>Executes the written tests</li>
+              <li>Reports the results (cli, html)</li>
+              <li></li>
+            </ul>
           </section>
 
           <section>
             <h2>Mocha.js Syntax</h2>
-            <pre><code>describe('database tests', function() {
-  describe('users table tests', function () {
-    it('returns an array', function(){
-      // test functions
-    });
+            <pre><code>
+  // Testsuite
+  describe('a testsuite', function() {
+    describe('a nested testsuite', function() {
+      // Testcase
+      it('is a testcase', function() {
+        // Tests
+      });
+    }
   }
-}</code></pre>
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Mocha.js Syntax II</h2>
+            <iframe src="https://mochajs.org/#table-of-contents" frameborder="0"></iframe>
           </section>
 
           <section>
@@ -124,44 +212,59 @@
               <p>Chai is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework.</p>
               <footer>– Chaijs.org</footer>
             </blockquote>
+            <img src="./img/chai.png" alt="" class="img-unstyled">
           </section>
 
           <section>
             <h2>Chai.js</h2>
             <p>3 different assertion styles:</p>
-            <ul>
+            <ul class="list-unstyled">
               <li>
-              <p>should</p>
-              <pre><code>variable.shoud.be.a('string')</code></pre></li>
+                <p>should</p>
+                <pre><code>variable.should.be.a('string')</code></pre></li>
               <li>
-              <p>expect</p>
-              <pre><code>expect(variable).to.be.a('string')</code></pre></li>
+                <p>expect</p>
+                <pre><code>expect(variable).to.be.a('string')</code></pre></li>
               <li>
-              <p>assert</p>
-              <pre><code>assert.typeOf(variable, 'string')</code></pre></li>
+                <p>assert</p>
+                <pre><code>assert.typeOf(variable, 'string')</code></pre></li>
             </ul>
-            <p>Plugins extend the functionality (HTTP Request, Databases, ect. pp.)</p>
+            <p>Plugins extend the functionality (HTTP Request, Databases, DOM, ect. pp.)</p>
+            <aside class="notes">More Plugins: HTTP Reqeust, JSON, XML, DOM, Regex Filesystem, Datetiemes</aside>
           </section>
 
           <section>
             <h2>Chai.js expect syntax</h2>
-            <pre><code>expect(variable)
+            <pre><code>
+  expect(variable)
       .to.be.a('string')
-      .and.to.be.equal('Hello World');</code></pre>
+      .and.to.be.equal('Hello World');
+            </code></pre>
+            <aside class="notes">
+              Füllworter/Wörter zum Functionchaining: to, be, been, is, that, which, and, has, have, with, at, of, same;
+            </aside>
+          </section>
+
+          <section>
+            <h2>Chai.js Syntax</h2>
+            <iframe src="http://chaijs.com/api/bdd/" frameborder="0"></iframe>
           </section>
 
           <section>
             <h2>Mocha.js and Chai.js</h2>
-            <pre><code>describe('a testsuite', function() {
+            <pre><code>
+  describe('a testsuite', function() {
 
-  it('returns the string "Hello World"', function() {
+    it('returns the string -Hello World-', function() {
 
-    expect(variable)
-      .to.be.a('string')
-      .and.to.be.equal('Hello World');
+      expect(variable)
+        .to.be.a('string')
+        .and.to.be.equal('Hello World');
+
+    });
 
   });
-});</code></pre>
+            </code></pre>
           </section>
 
         </section>
@@ -170,13 +273,203 @@
         <section>
 
           <section>
-            <h2>Node.js TDD Example</h2>
+            <h2>Node.js TDD Example HelloYou</h2>
+            <p>Requirements: Develop an application, that can greets you by your name</p>
+            <a href="">Link to the Git-Repo</a>
+            <br><br><br>
+            <p>
+              <small>You are free to try it yourself or just watch as we do</small>
+            </p>
           </section>
 
           <section>
-            <h2>Example Cycle Step 1...</h2>
-            <p>Siehe https://blog.mi.hdm-stuttgart.de/index.php/2016/06/10/test-driven-development-part-ii/</p>
+            <h2>Before Developing</h2>
+            <ul class="list-unstyled">
+              <li>
+                <p>1. Clone the GitHub Repo</p>
+                <pre><code>git clone https://github.com/RomanKol/syseng-presentation.git</code></pre>
+              </li>
+              <li>
+                <p>2. Install the dependencies in the ./example folder</p>
+                <pre><code>npm install</code></pre>
+              </li>
+              <li>
+                <p>3. Start coding</p>
+              </li>
+            </ul>
           </section>
+
+          <section>
+            <h2 class="orange">Step 1: Add a Test</h2>
+            <p>Open the <strong>tests.js</strong> File in <strong>./test</strong></p>
+            <p>Add a test with the requirement: <strong>return value is a string</strong></p>
+            <div class="fragment">
+              <p><strong>Result</strong></p>
+              <pre><code>  // ./test/tests.js
+
+  describe('app testsuite', function() {
+
+    it('returns a string', function() {
+
+      expect(helloYou())
+        .to.be.a('string');
+
+    });
+
+  });
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="red">2. Run the test</h2>
+            <p>Run the test with mocha</p>
+            <pre><code>
+  mocha
+            </code></pre>
+            <div class="fragment">
+              <p><strong>Result</strong></p>
+              <pre><code>
+  app testsuite
+  1) returns a string
+
+  0 passing (17ms)
+  1 failing
+
+  1) app testsuite returns a string:
+    AssertionError: expected undefined to be a string
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="yellow">3. Write the code</h2>
+            <p>Write the code so that the test succeeds</p>
+            <div class="fragment">
+              <p><strong>Result</strong></p>
+              <pre><code>
+  // ./app/index.js
+
+  module.exports = function() {
+
+    return 'Hello World';
+
+  };
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="blue">4. Run the test again</h2>
+            <p>Run the test again</p>
+            <pre><code>mocha</code></pre>
+            <div class="fragment">
+              <p><strong>Result</strong></p>
+              <pre><code>
+  app testsuite
+    √ returns a string
+
+  1 passing (11ms)
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="green">5. Refactor the code</h2>
+            <p>Only if necessary <strong>;)</strong></p>
+          </section>
+
+          <section>
+            <h2>Repeat</h2>
+            <p><strong>Repeat step 1 to 5</strong> until all requirements are met.</p>
+            <p>Next requirement is to greet by your name</p>
+          </section>
+
+          <section>
+            <h2 class="orange">Step 1: Add a Test</h2>
+            <p>Open the <strong>tests.js</strong> File in <strong>./test</strong></p>
+            <p>Add a new test with the requirement: <strong>return a string that contains 'John Doe'</strong></p>
+            <div class="fragment">
+              <p><strong>Result</strong></p>
+              <pre><code>  // ./test/tests.js
+
+  it('returns a string containing John Doe', function() {
+
+    expect(helloYou('John Doe'))
+      .to.match(/.*John Doe.*/);
+
+  });
+
+              </code></pre>
+            </div>
+          </section>
+
+<section>
+            <h2 class="red">2. Run the test</h2>
+            <p>Run the test with mocha</p>
+            <pre><code>
+  mocha
+            </code></pre>
+            <div class="fragment">
+              <p><strong>Result</strong></p>
+              <pre><code>
+app testsuite
+  √ returns a string
+  1) returns a string containing John Doe
+
+
+1 passing (19ms)
+1 failing
+
+1) app testsuite returns a string containing John Doe:
+   AssertionError: expected 'Hello World!' to match /.*John Doe.*/
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="yellow">3. Write the code</h2>
+            <p>Write the code so that the test succeeds</p>
+            <div class="fragment">
+              <p><strong>Result</strong></p>
+              <pre><code>
+  // ./app/index.js
+
+  module.exports = function(name) {
+
+    return 'Hello ' +  name + '!';
+
+  };
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="blue">4. Run the test again</h2>
+            <p>Run the test again</p>
+            <pre><code>mocha</code></pre>
+            <div class="fragment">
+              <p><strong>Result</strong></p>
+              <pre><code>
+  app testsuite
+    √ returns a string
+    √ returns a string with John Doe
+
+  2 passing (17ms)
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="green">5. Refactor the code</h2>
+            <p>Only if necessary <strong>;)</strong></p>
+          </section>
+
+          <section>
+            <h1>Congratulation</h1>
+            <p>All requirements are met by our application</p>
+          </section>
+        </section>
 
         </section>
 
@@ -240,7 +533,7 @@
         dependencies: [
           // { src: '/markdown/marked.js' },
           // { src: '/markdown/markdown.js' },
-          // { src: '/notes/notes.js', async: true },
+          { src: 'js/notes.js', async: true },
           { src: 'js/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
         ]
       });
