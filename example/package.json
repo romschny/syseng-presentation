@@ -1,0 +1,22 @@
+{
+  "name": "node-tdd-example",
+  "version": "1.0.0",
+  "description": "example helloYou application for tdd",
+  "main": "app/app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "tdd",
+    "noodejs",
+    "mocha",
+    "chai"
+  ],
+  "author": "Roman Kollatschny, Matthias Schmidt",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.0.1",
+    "mocha": "^2.5.3"
+  }
+}
