@@ -26,6 +26,7 @@
     <style>
       ul.list-unstyled {
         list-style: none;
+        margin: 0 !important;
       }
       pre {
         min-width: 640px;
@@ -80,7 +81,7 @@
                 <li>What is TDD?</li>
                 <li>TDD Cycle</li>
                 <li>Frameworks</li>
-                <li>Examples</li>
+                <li>Examples <small>(You can do it by yourself; you need node.js and our repo (https://github.com/RomanKol/syseng-presentation.git))</small></li>
               </ul>
             </li>
             <li>
@@ -164,8 +165,8 @@
         <section>
 
           <section>
-            <h1>Node.js TDD Frameworks</h1>
-            <p>Frameworks for Node.js</p>
+            <h1>Frameworks</h1>
+            <p>TDD Frameworks for Node.js</p>
           </section>
 
           <section>
@@ -202,7 +203,7 @@
           </section>
 
           <section>
-            <h2>Mocha.js Syntax II</h2>
+            <h2>Mocha.js Syntax</h2>
             <iframe src="https://mochajs.org/#table-of-contents" frameborder="0"></iframe>
           </section>
 
@@ -273,9 +274,10 @@
         <section>
 
           <section>
-            <h2>Node.js TDD Example HelloYou</h2>
-            <p>Requirements: Develop an application, that can greets you by your name</p>
-            <a href="">Link to the Git-Repo</a>
+            <h1>TDD Example</h1>
+            <p>A <strong>'helloYou'</strong> node.js application</p>
+            <p>Requirements: Develop an application, that can greet you by your name</p>
+            <a href="https://github.com/RomanKol/syseng-presentation">https://github.com/RomanKol/syseng-presentation</a>
             <br><br><br>
             <p>
               <small>You are free to try it yourself or just watch as we do</small>
@@ -376,7 +378,7 @@
 
           <section>
             <h2 class="green">5. Refactor the code</h2>
-            <p>Only if necessary <strong>;)</strong></p>
+            <p>Only if necessary 😉</p>
           </section>
 
           <section>
@@ -462,7 +464,7 @@ app testsuite
 
           <section>
             <h2 class="green">5. Refactor the code</h2>
-            <p>Only if necessary <strong>;)</strong></p>
+            <p>Only if necessary 😉</p>
           </section>
 
           <section>
@@ -476,41 +478,86 @@ app testsuite
         <!-- Code Style -->
         <section>
           <section>
-            <h1>Code Style</h1>
-            <p>JSCS/ESLint and JSHint</p>
+            <h1>CS &amp; CQ</h1>
+            <p>Node.js tools for Code Style and Code Quality</p>
           </section>
 
           <section>
-            <h2>JSCS/ESLint</h2>
-            <p>Code Style Formatter</p>
+            <h2>Linter</h2>
+            <blockquote>
+              <p>Linting is the process of running a program that will analyse code for potential errors.</p>
+              <footer>- Oded <a href="http://stackoverflow.com/a/8503586">@stackOverflow</a></footer>
+            </blockquote>
           </section>
 
           <section>
-            <h2>JSHint</h2>
-            <p>Code Analysis Tool for detecting errors</p>
-          </section>
-
-        </section>
-
-        <!-- Example -->
-        <section>
-
-          <section>
-            <h2>JSCS/ESLint on example app</h2>
-            <p>Show usage and results</p>
+            <h2>ESLint</h2>
+            <blockquote>
+              <p>The pluggable linting utility for JavaScript and JSX</p>
+              <footer>-ESLint.org</footer>
+            </blockquote>
+            <p>Static code analysis to detect possible errors</p>
+            <p>Check for correct style guidelines compliance</p>
           </section>
 
           <section>
-            <h2>JSHint on example app</h2>
-            <p>Show usage and results</p>
+            <h2>ESLint Example</h2>
+            <ul class="list-unstyled">
+              <li>
+                <p>Configure ESLint</p>
+                <pre><code>eslint --init</code></pre>
+              </li>
+              <li>
+                <p>Run ESLint</p>
+                <pre><code>eslint app/</code></pre>
+              </li>
+              <li>
+                <p>Let ESLint fix your problems 😉</p>
+                <pre><code>eslint app/ --fix</code></pre>
+              </li>
+              <li>
+                <p>Fix the remaining errors by yourself</p>
+              </li>
+            </ul>
           </section>
+
         </section>
 
         <!-- Fin -->
         <section>
           <section>
-            <h2>Conclusion</h2>
-            <p>Total cool shit, but sometimes mindfuck</p>
+            <h1>Conclusion</h1>
+          </section>
+          <section>
+            <h2>Conclusion TDD</h2>
+            <ul class="list-unstyled">
+              <li>
+                <p>TDD approach is really nice, <strong>BUT</strong></p>
+                <ul>
+                  <li>you have to force yourself to code by the rules</li>
+                  <li>it needs more than some time to get into it</li>
+                  <li>it is the opposite of 'normal' coding</li>
+                  <li>it feels so much slower <strong>BUT</strong> it's maybe just a feeling</li>
+                </ul>
+                <br>
+                <p><strong>BUT</strong> we think it's definitely worth a try 😉</p>
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Conclusion CS &amp; CQ</h2>
+            <ul class="list-unstyled">
+              <li>
+                <p>CS and CQ are easy ways to improve your code</p>
+                <ul>
+                  <li>there is no training period</li>
+                  <li>only needs little time to configurate</li>
+                </ul>
+                <br>
+                <p>We definitely recommend tools like ESLint, you have nothing to lose 😉</p>
+              </li>
+            </ul>
           </section>
         </section>
 
